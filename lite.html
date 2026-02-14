@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Sports Tournaments</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&family=Work+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">WE Champions</div>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-page="football">Football</a></li>
+                <li><a href="#" class="nav-link" data-page="volleyball">Volleyball</a></li>
+                <li><a href="#" class="nav-link" data-page="chess">Chess</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <div class="hero">
+            <h1>School Sports Tournaments</h1>
+            <p>Experience the thrill of competition. Where champions are made and legends are born.</p>
+        </div>
+
+        <div class="container">
+            <div class="tournament-grid">
+                <!-- Football Card -->
+                <div class="tournament-card football-card">
+                    <div class="card-header">
+                        <div class="card-icon">⚽</div>
+                        <h2>Football</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Join the ultimate battle on the pitch. 8 teams compete in group stages for tournament glory.
+                        </p>
+                        <button class="btn btn-orange" onclick="navigateTo('football')">View Tournament</button>
+                    </div>
+                </div>
+
+                <!-- Volleyball Card -->
+                <div class="tournament-card volleyball-card">
+                    <div class="card-header">
+                        <div class="card-icon">🏐</div>
+                        <h2>Volleyball</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Spike, set, and serve your way to victory. Teams battle for supremacy on the court.</p>
+                        <button class="btn btn-blue" onclick="navigateTo('volleyball')">View Tournament</button>
+                    </div>
+                </div>
+
+                <!-- Chess Card -->
+                <div class="tournament-card chess-card">
+                    <div class="card-header">
+                        <div class="card-icon">♟️</div>
+                        <h2>Chess</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>Master strategy and outwit your opponents. Individual brilliance meets tactical genius.</p>
+                        <button class="btn btn-green" onclick="navigateTo('chess')">View Tournament</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Football Tournament Page -->
+    <div id="football" class="page">
+        <div class="container">
+            <a href="#" class="back-btn" onclick="navigateTo('home'); return false;">← Back to Home</a>
+
+            <div class="section-header">
+                <h2>Football Tournament</h2>
+            </div>
+
+            <!-- Groups Section -->
+            <div class="groups-grid">
+                <div class="group-card">
+                    <h3>Group A</h3>
+                    <ul class="team-list">
+                        <li class="team-item" onclick="navigateTo('team', 'Eagles')">
+                            <span class="team-number">1.</span>
+                            <span>Eagles FC</span>
+                        </li>
+                        <li class="team-item" onclick="navigateTo('team', 'Tigers')">
+                            <span class="team-number">2.</span>
+                            <span>Tigers United</span>
+                        </li>
+                        <li class="team-item" onclick="navigateTo('team', 'Lions')">
+                            <span class="team-number">3.</span>
+                            <span>Lions FC</span>
+                        </li>
+                        <li class="team-item" onclick="navigateTo('team', 'Sharks')">
+                            <span class="team-number">4.</span>
+                            <span>Sharks FC</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="group-card">
+                    <h3>Group B</h3>
+                    <ul class="team-list">
+                        <li class="team-item" onclick="navigateTo('team', 'Panthers')">
+                            <span class="team-number">1.</span>
+                            <span>Panthers FC</span>
+                        </li>
+                        <li class="team-item" onclick="navigateTo('team', 'Wolves')">
+                            <span class="team-number">2.</span>
+                            <span>Wolves United</span>
+                        </li>
+                        <li class="team-item" onclick="navigateTo('team', 'Hawks')">
+                            <span class="team-number">3.</span>
+                            <span>Hawks FC</span>
+                        </li>
+                        <li class="team-item" onclick="navigateTo('team', 'Falcons')">
+                            <span class="team-number">4.</span>
+                            <span>Falcons FC</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Matches Section -->
+            <div class="matches-section">
+                <div class="section-header">
+                    <h2>Matches</h2>
+                </div>
+
+                <div class="match-card"
+                    onclick="navigateTo('football-match', {home: 'Eagles FC', away: 'Tigers United', homeScore: 3, awayScore: 1})">
+                    <div class="match-team">
+                        <h4 onclick="event.stopPropagation(); navigateTo('team', 'Eagles')">Eagles FC</h4>
+                        <div class="match-score">
+                            <span class="score">3</span>
+                        </div>
+                    </div>
+                    <div class="match-vs">VS</div>
+                    <div class="match-team">
+                        <h4 onclick="event.stopPropagation(); navigateTo('team', 'Tigers')">Tigers United</h4>
+                        <div class="match-score">
+                            <span class="score">1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="match-card"
+                    onclick="navigateTo('football-match', {home: 'Lions FC', away: 'Sharks FC', homeScore: 2, awayScore: 2})">
+                    <div class="match-team">
+                        <h4 onclick="event.stopPropagation(); navigateTo('team', 'Lions')">Lions FC</h4>
+                        <div class="match-score">
+                            <span class="score">2</span>
+                        </div>
+                    </div>
+                    <div class="match-vs">VS</div>
+                    <div class="match-team">
+                        <h4 onclick="event.stopPropagation(); navigateTo('team', 'Sharks')">Sharks FC</h4>
+                        <div class="match-score">
+                            <span class="score">2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="match-card"
+                    onclick="navigateTo('football-match', {home: 'Panthers FC', away: 'Wolves United', homeScore: 4, awayScore: 0})">
+                    <div class="match-team">
+                        <h4 onclick="event.stopPropagation(); navigateTo('team', 'Panthers')">Panthers FC</h4>
+                        <div class="match-score">
+                            <span class="score">4</span>
+                        </div>
+                    </div>
+                    <div class="match-vs">VS</div>
+                    <div class="match-team">
+                        <h4 onclick="event.stopPropagation(); navigateTo('team', 'Wolves')">Wolves United</h4>
+                        <div class="match-score">
+                            <span class="score">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="match-card"
+                    onclick="navigateTo('football-match', {home: 'Hawks FC', away: 'Falcons FC', homeScore: 1, awayScore: 3})">
+                    <div class="match-team">
+                        <h4 onclick="event.stopPropagation(); navigateTo('team', 'Hawks')">Hawks FC</h4>
+                        <div class="match-score">
+                            <span class="score">1</span>
+                        </div>
+                    </div>
+                    <div class="match-vs">VS</div>
+                    <div class="match-team">
+                        <h4 onclick="event.stopPropagation(); navigateTo('team', 'Falcons')">Falcons FC</h4>
+                        <div class="match-score">
+                            <span class="score">3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Volleyball Tournament Page -->
+    <div id="volleyball" class="page">
+        <div class="container">
+            <a href="#" class="back-btn" onclick="navigateTo('home'); return false;">← Back to Home</a>
+
+            <div class="section-header">
+                <h2>Volleyball Tournament</h2>
+            </div>
+
+            <!-- Groups Section -->
+            <div class="groups-grid">
+                <div class="group-card">
+                    <h3>Group A</h3>
+                    <ul class="team-list">
+                        <li class="team-item" onclick="navigateTo('vb-team', 'Spikers')">
+                            <span class="team-number">1.</span>
+                            <span>Spikers VB</span>
+                        </li>
+                        <li class="team-item" onclick="navigateTo('vb-team', 'Aces')">
+                            <span class="team-number">2.</span>
+                            <span>Aces VB</span>
+                        </li>
+                        <li class="team-item" onclick="navigateTo('vb-team', 'Thunder')">
+                            <span class="team-number">3.</span>
+                            <span>Thunder VB</span>
+                        </li>
+                        <li class="team-item" onclick="navigateTo('vb-team', 'Storm')">
+                            <span class="team-number">4.</span>
+                            <span>Storm VB</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="group-card">
+                    <h3>Group B</h3>
+                    <ul class="team-list">
+                        <li class="team-item" onclick="navigateTo('vb-team', 'Blaze')">
+                            <span class="team-number">1.</span>
+                            <span>Blaze VB</span>
+                        </li>
+                        <li class="team-item" onclick="navigateTo('vb-team', 'Lightning')">
+                            <span class="team-number">2.</span>
+                            <span>Lightning VB</span>
+                        </li>
+                        <li class="team-item" onclick="navigateTo('vb-team', 'Phoenix')">
+                            <span class="team-number">3.</span>
+                            <span>Phoenix VB</span>
+                        </li>
+                        <li class="team-item" onclick="navigateTo('vb-team', 'Warriors')">
+                            <span class="team-number">4.</span>
+                            <span>Warriors VB</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Matches Section -->
+            <div class="matches-section">
+                <div class="section-header">
+                    <h2>Matches</h2>
+                </div>
+
+                <div class="match-card"
+                    onclick="navigateTo('volleyball-match', {home: 'Spikers VB', away: 'Aces VB', homeScore: 3, awayScore: 1, sets: '(25-20, 23-25, 25-18, 25-22)'})">
+                    <div class="match-team">
+                        <h4 onclick="event.stopPropagation(); navigateTo('vb-team', 'Spikers')">Spikers VB</h4>
+                        <div class="match-score">
+                            <span class="score">3</span>
+                            <span style="color: #999;">-</span>
+                            <span class="score">1</span>
+                        </div>
+                        <div class="match-info">(25-20, 23-25, 25-18, 25-22)</div>
+                    </div>
+                    <div class="match-vs">VS</div>
+                    <div class="match-team">
+                        <h4 onclick="event.stopPropagation(); navigateTo('vb-team', 'Aces')">Aces VB</h4>
+                    </div>
+                </div>
+
+                <div class="match-card"
+                    onclick="navigateTo('volleyball-match', {home: 'Thunder VB', away: 'Storm VB', homeScore: 3, awayScore: 0, sets: '(25-15, 25-19, 25-21)'})">
+                    <div class="match-team">
+                        <h4 onclick="event.stopPropagation(); navigateTo('vb-team', 'Thunder')">Thunder VB</h4>
+                        <div class="match-score">
+                            <span class="score">3</span>
+                            <span style="color: #999;">-</span>
+                            <span class="score">0</span>
+                        </div>
+                        <div class="match-info">(25-15, 25-19, 25-21)</div>
+                    </div>
+                    <div class="match-vs">VS</div>
+                    <div class="match-team">
+                        <h4 onclick="event.stopPropagation(); navigateTo('vb-team', 'Storm')">Storm VB</h4>
+                        
+                    </div>
+                </div>
+
+                <div class="match-card"
+                    onclick="navigateTo('volleyball-match', {home: 'Blaze VB', away: 'Lightning VB', homeScore: 2, awayScore: 3, sets: '(25-22, 20-25, 25-27, 25-18, 12-15)'})">
+                    <div class="match-team">
+                        <h4 onclick="event.stopPropagation(); navigateTo('vb-team', 'Blaze')">Blaze VB</h4>
+                        <div class="match-score">
+                            <span class="score">2</span>
+                            <span style="color: #999;">-</span>
+                            <span class="score">3</span>
+                        </div>
+                        <div class="match-info">(25-22, 20-25, 25-27, 25-18, 12-15)</div>
+                    </div>
+                    <div class="match-vs">VS</div>
+                    <div class="match-team">
+                        <h4 onclick="event.stopPropagation(); navigateTo('vb-team', 'Lightning')">Lightning VB</h4>
+                    </div>
+                </div>
+
+                <div class="match-card"
+                    onclick="navigateTo('volleyball-match', {home: 'Phoenix VB', away: 'Warriors VB', homeScore: 3, awayScore: 2, sets: '(23-25, 25-20, 21-25, 25-19, 15-13)'})">
+                    <div class="match-team">
+                        <h4 onclick="event.stopPropagation(); navigateTo('vb-team', 'Phoenix')">Phoenix VB</h4>
+                        <div class="match-score">
+                            <span class="score">3</span>
+                            <span style="color: #999;">-</span>
+                            <span class="score">2</span>
+                        </div>
+                        <div class="match-info">(23-25, 25-20, 21-25, 25-19, 15-13)</div>
+                    </div>
+                    <div class="match-vs">VS</div>
+                    <div class="match-team">
+                        <h4 onclick="event.stopPropagation(); navigateTo('vb-team', 'Warriors')">Warriors VB</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chess Tournament Page -->
+    <div id="chess" class="page">
+        <div class="container">
+            <a href="#" class="back-btn" onclick="navigateTo('home'); return false;">← Back to Home</a>
+
+            <div class="section-header">
+                <h2>Chess Tournament</h2>
+            </div>
+
+            <!-- Players Grid -->
+            <div class="players-grid">
+                <div class="player-card" onclick="navigateTo('player', 'Alex Chen')">
+                    <div class="player-avatar">AC</div>
+                    <h3>Alex Chen</h3>
+                    <p class="player-rating">Rating: 1850</p>
+                    <div class="stat-label">5 Wins • 2 Draws • 1 Loss</div>
+                </div>
+
+                <div class="player-card" onclick="navigateTo('player', 'Sarah Mitchell')">
+                    <div class="player-avatar">SM</div>
+                    <h3>Sarah Mitchell</h3>
+                    <p class="player-rating">Rating: 1720</p>
+                    <div class="stat-label">4 Wins • 3 Draws • 1 Loss</div>
+                </div>
+
+                <div class="player-card" onclick="navigateTo('player', 'Marcus Johnson')">
+                    <div class="player-avatar">MJ</div>
+                    <h3>Marcus Johnson</h3>
+                    <p class="player-rating">Rating: 1680</p>
+                    <div class="stat-label">3 Wins • 4 Draws • 1 Loss</div>
+                </div>
+
+                <div class="player-card" onclick="navigateTo('player', 'Emma Rodriguez')">
+                    <div class="player-avatar">ER</div>
+                    <h3>Emma Rodriguez</h3>
+                    <p class="player-rating">Rating: 1790</p>
+                    <div class="stat-label">5 Wins • 1 Draw • 2 Losses</div>
+                </div>
+
+                <div class="player-card" onclick="navigateTo('player', 'David Kim')">
+                    <div class="player-avatar">DK</div>
+                    <h3>David Kim</h3>
+                    <p class="player-rating">Rating: 1650</p>
+                    <div class="stat-label">3 Wins • 3 Draws • 2 Losses</div>
+                </div>
+
+                <div class="player-card" onclick="navigateTo('player', 'Lisa Anderson')">
+                    <div class="player-avatar">LA</div>
+                    <h3>Lisa Anderson</h3>
+                    <p class="player-rating">Rating: 1710</p>
+                    <div class="stat-label">4 Wins • 2 Draws • 2 Losses</div>
+                </div>
+            </div>
+
+            <!-- Matches Section -->
+            <div class="matches-section">
+                <div class="section-header">
+                    <h2>Recent Matches</h2>
+                </div>
+
+                <div class="chess-match"
+                    onclick="navigateTo('chess-match', {white: 'Alex Chen', black: 'Sarah Mitchell', result: '1-0', whiteRating: 1850, blackRating: 1720})">
+                    <div class="chess-player" onclick="event.stopPropagation(); navigateTo('player', 'Alex Chen')">
+                        <div class="player-name">Alex Chen</div>
+                        <div style="color: #999; font-size: 0.9rem;">Rating: 1850</div>
+                    </div>
+                    <div class="chess-result result-win">1 - 0</div>
+                    <div class="chess-player" onclick="event.stopPropagation(); navigateTo('player', 'Sarah Mitchell')">
+                        <div class="player-name" style="text-align: right;">Sarah Mitchell</div>
+                        <div style="color: #999; font-size: 0.9rem; text-align: right;">Rating: 1720</div>
+                    </div>
+                </div>
+
+                <div class="chess-match"
+                    onclick="navigateTo('chess-match', {white: 'Emma Rodriguez', black: 'Marcus Johnson', result: '0.5-0.5', whiteRating: 1790, blackRating: 1680})">
+                    <div class="chess-player" onclick="event.stopPropagation(); navigateTo('player', 'Emma Rodriguez')">
+                        <div class="player-name">Emma Rodriguez</div>
+                        <div style="color: #999; font-size: 0.9rem;">Rating: 1790</div>
+                    </div>
+                    <div class="chess-result result-draw">½ - ½</div>
+                    <div class="chess-player" onclick="event.stopPropagation(); navigateTo('player', 'Marcus Johnson')">
+                        <div class="player-name" style="text-align: right;">Marcus Johnson</div>
+                        <div style="color: #999; font-size: 0.9rem; text-align: right;">Rating: 1680</div>
+                    </div>
+                </div>
+
+                <div class="chess-match"
+                    onclick="navigateTo('chess-match', {white: 'David Kim', black: 'Lisa Anderson', result: '0-1', whiteRating: 1650, blackRating: 1710})">
+                    <div class="chess-player" onclick="event.stopPropagation(); navigateTo('player', 'David Kim')">
+                        <div class="player-name">David Kim</div>
+                        <div style="color: #999; font-size: 0.9rem;">Rating: 1650</div>
+                    </div>
+                    <div class="chess-result result-loss">0 - 1</div>
+                    <div class="chess-player" onclick="event.stopPropagation(); navigateTo('player', 'Lisa Anderson')">
+                        <div class="player-name" style="text-align: right;">Lisa Anderson</div>
+                        <div style="color: #999; font-size: 0.9rem; text-align: right;">Rating: 1710</div>
+                    </div>
+                </div>
+
+                <div class="chess-match"
+                    onclick="navigateTo('chess-match', {white: 'Alex Chen', black: 'Marcus Johnson', result: '1-0', whiteRating: 1850, blackRating: 1680})">
+                    <div class="chess-player" onclick="event.stopPropagation(); navigateTo('player', 'Alex Chen')">
+                        <div class="player-name">Alex Chen</div>
+                        <div style="color: #999; font-size: 0.9rem;">Rating: 1850</div>
+                    </div>
+                    <div class="chess-result result-win">1 - 0</div>
+                    <div class="chess-player" onclick="event.stopPropagation(); navigateTo('player', 'Marcus Johnson')">
+                        <div class="player-name" style="text-align: right;">Marcus Johnson</div>
+                        <div style="color: #999; font-size: 0.9rem; text-align: right;">Rating: 1680</div>
+                    </div>
+                </div>
+
+                <div class="chess-match"
+                    onclick="navigateTo('chess-match', {white: 'Emma Rodriguez', black: 'David Kim', result: '1-0', whiteRating: 1790, blackRating: 1650})">
+                    <div class="chess-player" onclick="event.stopPropagation(); navigateTo('player', 'Emma Rodriguez')">
+                        <div class="player-name">Emma Rodriguez</div>
+                        <div style="color: #999; font-size: 0.9rem;">Rating: 1790</div>
+                    </div>
+                    <div class="chess-result result-win">1 - 0</div>
+                    <div class="chess-player" onclick="event.stopPropagation(); navigateTo('player', 'David Kim')">
+                        <div class="player-name" style="text-align: right;">David Kim</div>
+                        <div style="color: #999; font-size: 0.9rem; text-align: right;">Rating: 1650</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example Team Page (Football) -->
+    <div id="team-page" class="page">
+        <div class="container">
+            <a href="#" class="back-btn" onclick="navigateTo('football'); return false;">← Back to Tournament</a>
+
+            <div class="team-header">
+                <h1 id="team-name">Eagles FC</h1>
+                <p>Group A Champions</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Wins</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Draws</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Losses</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Goals Scored</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Goals Conceded</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Points</div>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top: 3rem;">
+                <h2>Recent Matches</h2>
+            </div>
+
+            <div class="match-card">
+                <div class="match-team">
+                    <h4>Eagles FC</h4>
+                    <div class="match-score">
+                        <span class="score">3</span>
+                    </div>
+                </div>
+                <div class="match-vs">VS</div>
+                <div class="match-team">
+                    <h4>Tigers United</h4>
+                    <div class="match-score">
+                        <span class="score">1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example Volleyball Team Page -->
+    <div id="vb-team-page" class="page">
+        <div class="container">
+            <a href="#" class="back-btn" onclick="navigateTo('volleyball'); return false;">← Back to Tournament</a>
+
+            <div class="team-header" style="background: var(--gradient-2);">
+                <h1 id="vb-team-name">Spikers VB</h1>
+                <p>Group A Leaders</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Matches Won</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Matches Lost</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Sets Won</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Sets Lost</div>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top: 3rem;">
+                <h2>Recent Matches</h2>
+            </div>
+
+            <div class="match-card">
+                <div class="match-team">
+                    <h4>Spikers VB</h4>
+                    <div class="match-score">
+                        <span class="score">3</span>
+                        <span style="color: #999;">-</span>
+                        <span class="score">1</span>
+                    </div>
+                    <div class="match-info">(25-20, 23-25, 25-18, 25-22)</div>
+                </div>
+                <div class="match-vs">VS</div>
+                <div class="match-team">
+                    <h4>Aces VB</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Player Page (Chess) -->
+    <div id="player-page" class="page">
+        <div class="container">
+            <a href="#" class="back-btn" onclick="navigateTo('chess'); return false;">← Back to Tournament</a>
+
+            <div class="player-header">
+                <div class="player-avatar" id="player-avatar">AC</div>
+                <h1 id="player-name">Alex Chen</h1>
+                <p class="player-rating-large">Rating: 1850</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Wins</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Draws</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Loss</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">62.5%</div>
+                    <div class="stat-label">Win Rate</div>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top: 3rem;">
+                <h2>Recent Matches</h2>
+            </div>
+
+            <div class="chess-match">
+                <div class="chess-player">
+                    <div class="player-name">Alex Chen</div>
+                    <div style="color: #999; font-size: 0.9rem;">Rating: 1850</div>
+                </div>
+                <div class="chess-result result-win">1 - 0</div>
+                <div class="chess-player">
+                    <div class="player-name" style="text-align: right;">Sarah Mitchell</div>
+                    <div style="color: #999; font-size: 0.9rem; text-align: right;">Rating: 1720</div>
+                </div>
+            </div>
+
+            <div class="chess-match">
+                <div class="chess-player">
+                    <div class="player-name">Alex Chen</div>
+                    <div style="color: #999; font-size: 0.9rem;">Rating: 1850</div>
+                </div>
+                <div class="chess-result result-win">1 - 0</div>
+                <div class="chess-player">
+                    <div class="player-name" style="text-align: right;">Marcus Johnson</div>
+                    <div style="color: #999; font-size: 0.9rem; text-align: right;">Rating: 1680</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Football Match Detail Page -->
+    <div id="football-match-page" class="page">
+        <div class="container">
+            <a href="#" class="back-btn" onclick="navigateTo('football'); return false;">← Back to Football
+                Tournament</a>
+
+            <div class="match-detail-header">
+                <div class="match-date" id="fb-match-date">February 7, 2026 • 3:00 PM</div>
+                <div class="match-scoreboard">
+                    <div class="team-scoreboard">
+                        <h2 id="fb-home-team">Eagles FC</h2>
+                        <div class="team-score" id="fb-home-score">3</div>
+                    </div>
+                    <div class="scoreboard-vs">VS</div>
+                    <div class="team-scoreboard">
+                        <h2 id="fb-away-team">Tigers United</h2>
+                        <div class="team-score" id="fb-away-score">1</div>
+                    </div>
+                </div>
+                <div class="match-status">Full Time</div>
+            </div>
+
+            <div class="section-header">
+                <h2>Match Events</h2>
+            </div>
+
+            <div class="events-timeline">
+                <div class="event-item">
+                    <div class="event-time">12'</div>
+                    <div class="event-icon">⚽</div>
+                    <div class="event-description">
+                        <h4>GOAL!</h4>
+                        <p>Eagles FC - Strike from outside the box finds the top corner</p>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-time">28'</div>
+                    <div class="event-icon">🟨</div>
+                    <div class="event-description">
+                        <h4>Yellow Card</h4>
+                        <p>Tigers United - Tactical foul in midfield</p>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-time">35'</div>
+                    <div class="event-icon">⚽</div>
+                    <div class="event-description">
+                        <h4>GOAL!</h4>
+                        <p>Eagles FC - Header from corner kick</p>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-time">HT</div>
+                    <div class="event-icon">⏸️</div>
+                    <div class="event-description">
+                        <h4>Half Time</h4>
+                        <p>Eagles FC 2 - 0 Tigers United</p>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-time">58'</div>
+                    <div class="event-icon">⚽</div>
+                    <div class="event-description">
+                        <h4>GOAL!</h4>
+                        <p>Tigers United - Quick counter-attack finds the net</p>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-time">72'</div>
+                    <div class="event-icon">⚽</div>
+                    <div class="event-description">
+                        <h4>GOAL!</h4>
+                        <p>Eagles FC - Clinical finish from a through ball</p>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-time">FT</div>
+                    <div class="event-icon">🏁</div>
+                    <div class="event-description">
+                        <h4>Full Time</h4>
+                        <p>Eagles FC 3 - 1 Tigers United</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Match Statistics</h2>
+            </div>
+
+            <div class="match-stats">
+                <div class="stat-row">
+                    <div class="stat-value">58%</div>
+                    <div class="stat-bar-container">
+                        <div class="stat-label-center">Possession</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-left" style="width: 58%;">58%</div>
+                            <div class="stat-bar-right" style="width: 42%;">42%</div>
+                        </div>
+                    </div>
+                    <div class="stat-value">42%</div>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-value">15</div>
+                    <div class="stat-bar-container">
+                        <div class="stat-label-center">Shots</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-left" style="width: 65%;">15</div>
+                            <div class="stat-bar-right" style="width: 35%;">8</div>
+                        </div>
+                    </div>
+                    <div class="stat-value">8</div>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-value">7</div>
+                    <div class="stat-bar-container">
+                        <div class="stat-label-center">Shots on Target</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-left" style="width: 70%;">7</div>
+                            <div class="stat-bar-right" style="width: 30%;">3</div>
+                        </div>
+                    </div>
+                    <div class="stat-value">3</div>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-value">6</div>
+                    <div class="stat-bar-container">
+                        <div class="stat-label-center">Corners</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-left" style="width: 60%;">6</div>
+                            <div class="stat-bar-right" style="width: 40%;">4</div>
+                        </div>
+                    </div>
+                    <div class="stat-value">4</div>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-value">1</div>
+                    <div class="stat-bar-container">
+                        <div class="stat-label-center">Fouls</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-left" style="width: 25%;">1</div>
+                            <div class="stat-bar-right" style="width: 75%;">3</div>
+                        </div>
+                    </div>
+                    <div class="stat-value">3</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Volleyball Match Detail Page -->
+    <div id="volleyball-match-page" class="page">
+        <div class="container">
+            <a href="#" class="back-btn" onclick="navigateTo('volleyball'); return false;">← Back to Volleyball
+                Tournament</a>
+
+            <div class="match-detail-header volleyball-match-header">
+                <div class="match-date" id="vb-match-date">February 8, 2026 • 4:00 PM</div>
+                <div class="match-scoreboard">
+                    <div class="team-scoreboard">
+                        <h2 id="vb-home-team">Spikers VB</h2>
+                        <div class="team-score" id="vb-home-score">3</div>
+                    </div>
+                    <div class="scoreboard-vs">-</div>
+                    <div class="team-scoreboard">
+                        <h2 id="vb-away-team">Aces VB</h2>
+                        <div class="team-score" id="vb-away-score">1</div>
+                    </div>
+                </div>
+                <div class="match-status">Completed</div>
+            </div>
+
+            <div class="section-header">
+                <h2>Set Scores</h2>
+            </div>
+
+            <div class="sets-summary" id="vb-sets-summary">
+                <div class="set-card">
+                    <h3>Set 1</h3>
+                    <div class="set-score-display">25 - 20</div>
+                    <div class="set-winner">Spikers VB</div>
+                </div>
+                <div class="set-card">
+                    <h3>Set 2</h3>
+                    <div class="set-score-display">23 - 25</div>
+                    <div class="set-winner">Aces VB</div>
+                </div>
+                <div class="set-card">
+                    <h3>Set 3</h3>
+                    <div class="set-score-display">25 - 18</div>
+                    <div class="set-winner">Spikers VB</div>
+                </div>
+                <div class="set-card">
+                    <h3>Set 4</h3>
+                    <div class="set-score-display">25 - 22</div>
+                    <div class="set-winner">Spikers VB</div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Match Statistics</h2>
+            </div>
+
+            <div class="match-stats">
+                <div class="stat-row">
+                    <div class="stat-value">52</div>
+                    <div class="stat-bar-container">
+                        <div class="stat-label-center">Total Spikes</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-left" style="width: 60%;">52</div>
+                            <div class="stat-bar-right" style="width: 40%;">35</div>
+                        </div>
+                    </div>
+                    <div class="stat-value">35</div>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-value">8</div>
+                    <div class="stat-bar-container">
+                        <div class="stat-label-center">Aces</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-left" style="width: 62%;">8</div>
+                            <div class="stat-bar-right" style="width: 38%;">5</div>
+                        </div>
+                    </div>
+                    <div class="stat-value">5</div>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-value">14</div>
+                    <div class="stat-bar-container">
+                        <div class="stat-label-center">Blocks</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-left" style="width: 70%;">14</div>
+                            <div class="stat-bar-right" style="width: 30%;">6</div>
+                        </div>
+                    </div>
+                    <div class="stat-value">6</div>
+                </div>
+
+                <div class="stat-row">
+                    <div class="stat-value">12</div>
+                    <div class="stat-bar-container">
+                        <div class="stat-label-center">Errors</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-left" style="width: 43%;">12</div>
+                            <div class="stat-bar-right" style="width: 57%;">16</div>
+                        </div>
+                    </div>
+                    <div class="stat-value">16</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chess Match Detail Page -->
+    <div id="chess-match-page" class="page">
+        <div class="container">
+            <a href="#" class="back-btn" onclick="navigateTo('chess'); return false;">← Back to Chess Tournament</a>
+
+            <div class="match-detail-header chess-match-header">
+                <div class="match-date" id="chess-match-date">February 9, 2026 • 2:00 PM</div>
+                <div class="match-scoreboard">
+                    <div class="team-scoreboard">
+                        <h2 id="chess-white-player">Alex Chen</h2>
+                        <div style="font-size: 1.2rem; margin-top: 0.5rem; opacity: 0.9;" id="chess-white-rating">
+                            Rating: 1850</div>
+                        <div class="team-score" style="color: white; margin-top: 1rem;">White</div>
+                    </div>
+                    <div class="scoreboard-vs">VS</div>
+                    <div class="team-scoreboard">
+                        <h2 id="chess-black-player">Sarah Mitchell</h2>
+                        <div style="font-size: 1.2rem; margin-top: 0.5rem; opacity: 0.9;" id="chess-black-rating">
+                            Rating: 1720</div>
+                        <div class="team-score" style="color: white; margin-top: 1rem;">Black</div>
+                    </div>
+                </div>
+                <div class="match-status" id="chess-result-status">White Wins</div>
+            </div>
+
+            <div class="section-header">
+                <h2>Game Information</h2>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="chess-moves-count">42</div>
+                    <div class="stat-label">Total Moves</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1h 25m</div>
+                    <div class="stat-label">Duration</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Sicilian</div>
+                    <div class="stat-label">Opening</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="chess-result-text">1-0</div>
+                    <div class="stat-label">Result</div>
+                </div>
+            </div>
+
+            <div class="section-header" style="margin-top: 3rem;">
+                <h2>Move History</h2>
+            </div>
+
+            <div class="chess-moves">
+                <div class="moves-grid">
+                    <div class="move-item">
+                        <span class="move-number">1.</span>
+                        <span class="move-notation move-white">e4</span>
+                        <span class="move-notation move-black">c5</span>
+                    </div>
+                    <div class="move-item">
+                        <span class="move-number">2.</span>
+                        <span class="move-notation move-white">Nf3</span>
+                        <span class="move-notation move-black">d6</span>
+                    </div>
+                    <div class="move-item">
+                        <span class="move-number">3.</span>
+                        <span class="move-notation move-white">d4</span>
+                        <span class="move-notation move-black">cxd4</span>
+                    </div>
+                    <div class="move-item">
+                        <span class="move-number">4.</span>
+                        <span class="move-notation move-white">Nxd4</span>
+                        <span class="move-notation move-black">Nf6</span>
+                    </div>
+                    <div class="move-item">
+                        <span class="move-number">5.</span>
+                        <span class="move-notation move-white">Nc3</span>
+                        <span class="move-notation move-black">a6</span>
+                    </div>
+                    <div class="move-item">
+                        <span class="move-number">6.</span>
+                        <span class="move-notation move-white">Be3</span>
+                        <span class="move-notation move-black">e5</span>
+                    </div>
+                    <div class="move-item">
+                        <span class="move-number">7.</span>
+                        <span class="move-notation move-white">Nb3</span>
+                        <span class="move-notation move-black">Be6</span>
+                    </div>
+                    <div class="move-item">
+                        <span class="move-number">8.</span>
+                        <span class="move-notation move-white">f3</span>
+                        <span class="move-notation move-black">Be7</span>
+                    </div>
+                    <div class="move-item">
+                        <span class="move-number">...</span>
+                        <span class="move-notation" style="color: #999;">(38 more moves)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
